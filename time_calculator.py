@@ -54,7 +54,7 @@ def add_time(start, duration, day = None):
     dayNum = list(days.keys())[list(days.values()).index(day.capitalize())]
     
     if dayNum + daysPassed > 7:
-      dayNum += daysPassed % 7
+      dayNum = (dayNum + daysPassed) % 7
     else:
       dayNum += daysPassed
     
@@ -66,9 +66,7 @@ def add_time(start, duration, day = None):
   else:
     new_time = f"{finalHour}:{finalMin:02d} {zz}" + text
 
+  return new_time
 
 
   
-
-
-  return new_time
